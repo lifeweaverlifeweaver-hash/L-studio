@@ -7,158 +7,139 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; }
         .google-gradient {
             background: linear-gradient(to right, #4285F4, #34A853, #FBBC05, #EA4335);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .form-input { 
+            background: #111; 
+            border: 1px solid #222; 
+            padding: 1rem; 
+            border-radius: 0.75rem; 
+            width: 100%; 
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-input:focus { border-color: #2563eb; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-[#0a0a0a] text-white scroll-smooth">
+<body class="selection:bg-blue-500 selection:text-white">
 
-    <nav class="sticky top-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-900">
+    <nav class="sticky top-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-gray-900">
         <div class="max-w-6xl mx-auto p-6 flex justify-between items-center">
             <div class="text-2xl font-black tracking-tighter uppercase">L-Weaver Studio</div>
-            <div class="space-x-8 hidden md:flex text-sm font-medium text-gray-400 uppercase tracking-widest">
-                <a href="#how" class="hover:text-white">Процес</a>
-                <a href="#pricing" class="hover:text-white">Цени</a>
-                <a href="#insights" class="hover:text-white">Новини & Виждания</a>
+            <div class="space-x-8 hidden md:flex text-xs font-bold uppercase tracking-widest text-gray-400">
+                <a href="#pricing" class="hover:text-white transition">Цени</a>
+                <a href="#insights" class="hover:text-white transition">Insights</a>
+                <a href="#contact" class="hover:text-white transition">Контакт</a>
             </div>
-            <a href="#pricing" class="bg-blue-600 px-5 py-2 rounded-full text-sm font-bold">Старт</a>
+            <a href="#contact" class="bg-blue-600 px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition">Старт</a>
         </div>
     </nav>
 
-    <header class="py-32 px-6 text-center max-w-5xl mx-auto">
-        <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">
+    <header class="py-24 md:py-32 px-6 text-center max-w-5xl mx-auto">
+        <div class="inline-block px-4 py-1 border border-gray-800 rounded-full text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">
+            Дизайн Абонамент за Корпоративни Клиенти
+        </div>
+        <h1 class="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-none">
             Скорост, която <br><span class="google-gradient">Google обожава.</span>
         </h1>
-        <p class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
-            Ние не просто правим дизайн. Ние сглобяваме високопроизводителни машини за продажби. Заменете тромавите агенции с гъвкав дизайн абонамент.
+        <p class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
+            Ние не просто правим дизайн. Ние сглобяваме високопроизводителни машини за продажби за българския бизнес.
         </p>
-        <div class="flex flex-col md:flex-row justify-center gap-6">
-            <a href="#pricing" class="bg-white text-black px-10 py-5 rounded-2xl font-bold text-lg hover:bg-gray-200 transition">Виж плановете</a>
-            <a href="#insights" class="border border-gray-800 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white hover:text-black transition">Нашите виждания</a>
+        <div class="flex flex-col md:row justify-center gap-4">
+            <a href="#pricing" class="bg-white text-black px-10 py-5 rounded-2xl font-bold text-lg hover:bg-gray-200 transition">Виж Плановете</a>
+            <a href="#contact" class="border border-gray-800 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white hover:text-black transition">Свържи се с нас</a>
         </div>
     </header>
 
     <section id="pricing" class="py-24 max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-16 italic text-gray-500 underline underline-offset-8 decoration-blue-600">Нашите Абонаменти</h2>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-[#111] p-12 rounded-[2rem] border border-gray-800 card-hover flex flex-col justify-between">
+            <div class="bg-[#111] p-10 rounded-[2.5rem] border border-gray-800 card-hover flex flex-col justify-between">
                 <div>
                     <h3 class="text-2xl font-bold mb-2">Speed Subscription</h3>
-                    <p class="text-gray-500 mb-8 font-medium italic">Перфектно за маркетинг екипи</p>
-                    <p class="text-5xl font-black mb-8">€950 <span class="text-lg text-gray-500 font-normal">/мес.</span></p>
-                    <ul class="text-gray-400 space-y-4 mb-10 text-lg">
-                        <li class="flex items-center">✅ Един активен проект наведнъж</li>
-                        <li class="flex items-center">✅ Неограничени ревизии</li>
-                        <li class="flex items-center">✅ Доставка до 48 часа</li>
-                        <li class="flex items-center">✅ Оптимизация за Google Core Web Vitals</li>
+                    <p class="text-5xl font-black my-6">€950 <span class="text-lg text-gray-500 font-normal">/месец</span></p>
+                    <ul class="text-gray-400 space-y-4 mb-10">
+                        <li>✅ Един активен проект наведнъж</li>
+                        <li>✅ Неограничени ревизии</li>
+                        <li>✅ Доставка до 48 часа</li>
+                        <li>✅ SEO Скорост & Google Оптимизация</li>
                     </ul>
                 </div>
-                <a href="ВАШИЯТ_GUMROAD_LINK_SPEED" class="block text-center bg-white text-black py-5 rounded-2xl font-black tracking-widest uppercase">Започнете сега</a>
+                <a href="#contact" class="block text-center bg-white text-black py-4 rounded-xl font-bold uppercase tracking-widest">Избери Speed</a>
             </div>
 
-            <div class="bg-[#111] p-12 rounded-[2rem] border-2 border-blue-600 card-hover flex flex-col justify-between relative shadow-2xl shadow-blue-900/10">
-                <div class="absolute -top-4 left-10 bg-blue-600 text-white px-6 py-1 rounded-full text-xs font-black tracking-widest uppercase">Най-добра стойност</div>
+            <div class="bg-[#111] p-10 rounded-[2.5rem] border-2 border-blue-600 card-hover flex flex-col justify-between relative shadow-2xl shadow-blue-900/10">
+                <div class="absolute -top-4 left-10 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Най-добра стойност</div>
                 <div>
                     <h3 class="text-2xl font-bold mb-2">Scale Subscription</h3>
-                    <p class="text-gray-500 mb-8 font-medium italic">За технологични лидери</p>
-                    <p class="text-5xl font-black mb-8">€1,850 <span class="text-lg text-gray-500 font-normal">/мес.</span></p>
-                    <ul class="text-gray-400 space-y-4 mb-10 text-lg">
-                        <li class="flex items-center">🚀 Два активни проекта едновременно</li>
-                        <li class="flex items-center">🚀 Пълна разработка на Framer / GitHub</li>
-                        <li class="flex items-center">🚀 Техническо SEO на най-високо ниво</li>
-                        <li class="flex items-center">🚀 Приоритетна комуникация</li>
+                    <p class="text-5xl font-black my-6">€1,850 <span class="text-lg text-gray-500 font-normal">/месец</span></p>
+                    <ul class="text-gray-400 space-y-4 mb-10">
+                        <li>🚀 Два активни проекта едновременно</li>
+                        <li>🚀 Разработка на Framer / GitHub</li>
+                        <li>🚀 Пълно техническо SEO</li>
+                        <li>🚀 Директна връзка с дизайнера</li>
                     </ul>
                 </div>
-                <a href="ВАШИЯТ_GUMROAD_LINK_SCALE" class="block text-center bg-blue-600 text-white py-5 rounded-2xl font-black tracking-widest uppercase">Започнете сега</a>
+                <a href="#contact" class="block text-center bg-blue-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest">Избери Scale</a>
             </div>
         </div>
     </section>
 
-    <section id="insights" class="py-24 bg-[#0d0d0d] border-t border-gray-900">
+    <section id="insights" class="py-24 bg-[#0d0d0d] border-y border-gray-900">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4">L-Weaver Insights</h2>
-            <p class="text-gray-500 mb-16 text-xl italic">Как решаваме корпоративните проблеми чрез дизайн.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="border-l border-gray-800 pl-6 py-4">
-                    <span class="text-blue-500 font-bold tracking-widest uppercase text-xs">Проблем: Бавно зареждане</span>
-                    <h3 class="text-xl font-bold my-4 uppercase tracking-tighter">Защо 3 секунди са прекалено много?</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">
-                        Всяка секунда забавяне губи 7% от конверсиите. Ние вярваме, че скоростта е UX. Използваме лек код и WebP оптимизация, за да сме сигурни, че Google и вашите клиенти ви обожават.
-                    </p>
+            <h2 class="text-3xl font-black uppercase mb-12 tracking-tighter">Нашите Виждания</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Скорост</h4>
+                    <p class="text-gray-300">Бавните сайтове убиват бизнеса. Всеки проект от L-Studio е оптимизиран за светкавично зареждане.</p>
                 </div>
-
-                <div class="border-l border-gray-800 pl-6 py-4">
-                    <span class="text-blue-500 font-bold tracking-widest uppercase text-xs">Проблем: Остаряла визия</span>
-                    <h3 class="text-xl font-bold my-4 uppercase tracking-tighter">Дизайнът е доверие.</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">
-                        Ако сайтът ви изглежда като от 2015-та, губите авторитет. Корпоративният дизайн трябва да бъде минималистичен и функционален. Нашето виждане: по-малко шум, повече яснота.
-                    </p>
+                <div>
+                    <h4 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Доверие</h4>
+                    <p class="text-gray-300">Корпоративният дизайн трябва да вдъхва респект. Използваме минимализъм, който работи.</p>
                 </div>
-
-                <div class="border-l border-gray-800 pl-6 py-4">
-                    <span class="text-blue-500 font-bold tracking-widest uppercase text-xs">Проблем: Скъпи агенции</span>
-                    <h3 class="text-xl font-bold my-4 uppercase tracking-tighter">Защо абонаментът печели?</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">
-                        Традиционните агенции бавят проектите с месеци. Ние вярваме в скоростта. С L-Weaver плащате за резултат, не за часове срещи. Прозрачност и предвидими разходи.
-                    </p>
+                <div>
+                    <h4 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Ефективност</h4>
+                    <p class="text-gray-300">Абонаментът е бъдещето. Получавате екип от професионалисти без тежестта на договорите.</p>
                 </div>
             </div>
         </div>
     </section>
-<section id="contact" class="py-24 max-w-4xl mx-auto px-6">
-    <div class="bg-[#111] p-8 md:p-12 rounded-[2.5rem] border border-gray-800 shadow-2xl">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-black tracking-tighter uppercase mb-4">Свържете се сL-Studio
-                L-Studio</h2>
-            <p class="text-gray-500 italic">Готови ли сте за скорост, която Google ще обожава?</p>
+
+    <section id="contact" class="py-24 max-w-4xl mx-auto px-6">
+        <div class="bg-[#111] p-10 rounded-[3rem] border border-gray-800">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black uppercase tracking-tighter mb-4">Свържете се с нас</h2>
+                <p class="text-gray-500">Изпратете ни запитване и ще отговорим в рамките на часове.</p>
+            </div>
+            
+            <form action="https://formspree.io/f/xyyvbeok" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="Име" placeholder="Вашето Име" required class="form-input text-white">
+                    <input type="email" name="Email" placeholder="Вашият Имейл" required class="form-input text-white">
+                </div>
+                <input type="text" name="Фирма" placeholder="Компания" class="form-input text-white">
+                <textarea name="Съобщение" rows="5" placeholder="Разкажете ни за вашия проект..." required class="form-input text-white resize-none"></textarea>
+                
+                <input type="hidden" name="_next" value="https://lifeweaverlifeweaver-hash.github.io/L-studio/">
+                <input type="hidden" name="_subject" value="Ново запитване от L-Studio Website">
+
+                <button type="submit" class="w-full bg-blue-600 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-blue-700 transition transform hover:scale-[1.01]">
+                    Изпрати към L-Weaver Studio
+                </button>
+            </form>
         </div>
+    </section>
 
-        <form action="https://formspree.io/f/xyyvbeok" method="POST" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs font-black uppercase tracking-widest text-gray-500 mb-2 ml-2">Вашето Име</label>
-                    <input type="text" name="name" required 
-                        class="w-full bg-[#0a0a0a] border border-gray-800 p-4 rounded-2xl focus:border-blue-600 outline-none transition text-white">
-                </div>
-                <div>
-                    <label class="block text-xs font-black uppercase tracking-widest text-gray-500 mb-2 ml-2">Вашият Имейл</label>
-                    <input type="email" name="email" required 
-                        class="w-full bg-[#0a0a0a] border border-gray-800 p-4 rounded-2xl focus:border-blue-600 outline-none transition text-white">
-                </div>
-            </div>
-
-            <div>
-                <label class="block text-xs font-black uppercase tracking-widest text-gray-500 mb-2 ml-2">Фирма (Опционално)</label>
-                <input type="text" name="company" 
-                    class="w-full bg-[#0a0a0a] border border-gray-800 p-4 rounded-2xl focus:border-blue-600 outline-none transition text-white">
-            </div>
-
-            <div>
-                <label class="block text-xs font-black uppercase tracking-widest text-gray-500 mb-2 ml-2">Вашето съобщение</label>
-                <textarea name="message" rows="5" required 
-                    class="w-full bg-[#0a0a0a] border border-gray-800 p-4 rounded-2xl focus:border-blue-600 outline-none transition text-white resize-none"></textarea>
-            </div>
-
-            <input type="hidden" name="_subject" value="Ново запитване от L-Weaver Studio">
-
-            <button type="submit" 
-                class="w-full bg-blue-600 py-5 rounded-2xl font-black tracking-widest uppercase hover:bg-blue-700 transition-all transform hover:scale-[1.02]">
-                Изпрати съобщение
-            </button>
-        </form>
-    </div>
-</section>
-    
     <footer class="py-20 border-t border-gray-900 text-center">
         <p class="text-gray-600 mb-4">&copy; 2026 L-Weaver Studio. Всички права запазени.</p>
-        <p class="text-gray-400">Нуждаете се от договор за 6+ месеца? <br>
-            <a href="mailto:lifeweaverlifeweaver@gmail.com" class="text-blue-500 underline font-bold">Свържете се за индивидуална оферта.</a>
+        <p class="text-gray-400">
+            Пишете ни директно на: <br>
+            <a href="mailto:lifeweaverlifeweaver@gmail.com" class="text-blue-500 font-bold hover:underline">lifeweaverlifeweaver@gmail.com</a>
         </p>
     </footer>
 
